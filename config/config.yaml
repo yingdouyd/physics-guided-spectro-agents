@@ -1,0 +1,24 @@
+```yaml
+llm:
+  provider: "xiaomi_milm"
+  model: "milm-large"
+  api_base: "https://api.xiaomi.com/v1"
+  temperature: 0.2
+  max_tokens: 4096
+
+preprocessing:
+  baseline_methods: ["airPLS", "asLS", "ModPoly"]
+  smoothing_window: 11
+  snr_threshold: 10.0
+
+physics:
+  similarity_threshold: 0.85
+  max_retry: 3
+  spectrum_library_path: "utils/physics_library.py"
+
+diagnostic:
+  ml_models: ["SVM", "NN", "XGBoost"]
+  pca_components: 10
+  risk_thresholds:
+    low: 0.3
+    medium: 0.6

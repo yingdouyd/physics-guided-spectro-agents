@@ -1,0 +1,33 @@
+Python
+pycache/
+*.py[cod]
+*.so
+.Python
+env/
+venv/
+.venv/
+*.egg-info/
+
+IDE
+.vscode/
+.idea/
+*.swp
+
+Data & Models
+data/raw/
+data/processed/
+*.pkl
+*.h5
+*.ckpt
+
+API Keys
+.env
+config/secrets.yaml
+
+OS
+.DS_Store
+Thumbs.db
+
+Logs
+*.log
+logs/
