@@ -1,4 +1,3 @@
-```yaml
 llm:
   provider: "xiaomi_milm"
   model: "milm-large"

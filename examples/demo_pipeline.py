@@ -9,7 +9,9 @@ from agents.orchestrator import Orchestrator
 
 
 def main():
-    with open("config/config.yaml") as f:
+    project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    config_path = os.path.join(project_root, "config", "config.yaml")
+    with open(config_path) as f:
         cfg = yaml.safe_load(f)
     orch = Orchestrator(cfg)
     result = orch.run(sers_raw=None, seira_raw=None)

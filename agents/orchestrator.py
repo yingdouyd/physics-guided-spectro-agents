@@ -5,6 +5,7 @@ self-reflection retry loops, and end-to-end lineage tracking.
 
 import json
 import logging
+import os
 from typing import Dict, Any
 
 from agents.preprocessing_agent import PreprocessingAgent
@@ -57,7 +58,9 @@ class Orchestrator:
 
 if __name__ == "__main__":
     import yaml
-    with open("config/config.yaml") as f:
+    project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    config_path = os.path.join(project_root, "config", "config.yaml")
+    with open(config_path) as f:
         cfg = yaml.safe_load(f)
     orchestrator = Orchestrator(cfg)
     print(json.dumps(orchestrator.run(None, None), indent=2, default=str))
